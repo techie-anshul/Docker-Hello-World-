@@ -1,12 +1,6 @@
 # Docker-Hello-World-
 We will create a sample Hello World Docker image from scratch
 
-# Create a Directory for Docker Image
-
-```bash
-mkdir docimage
-cd docimage
-```
 # Sample Flask Web Application with Python 3.12
 
 This project demonstrates how to deploy a simple Flask web application using Docker with Python 3.12.
@@ -23,7 +17,14 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
 
 ### Prerequisites
 
-- Docker installed on your system
+  Docker installed on your system
+
+# Create a Directory for Docker Image
+
+```bash
+mkdir docimage
+cd docimage
+```
 
 ### Steps to Build and Run the Application
 
