@@ -11,7 +11,6 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
 
 ## Author
 
-**Name**: Anshul Shrivastava  
 **Roll Number**: G23AI2066
 
 ## How to Build and Run
