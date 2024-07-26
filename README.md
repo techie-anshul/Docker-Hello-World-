@@ -1,6 +1,12 @@
 # Docker-Hello-World-
 We will create a sample Hello World Docker image from scratch
 
+# Create a Directory for Docker Image
+
+```bash
+mkdir docimage
+cd docimage
+
 # Sample Flask Web Application with Python 3.12
 
 This project demonstrates how to deploy a simple Flask web application using Docker with Python 3.12.
@@ -21,13 +27,29 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
 
 ### Steps to Build and Run the Application
 
-1. **Clone the Repository**
+1: **Create the Flask Application**
 
-   Clone the repository to your local machine:
+   First, we need to create a Python file for our Flask application. This file will define the 
+   web server and the route for our app.
+
+   Use the following command to create the app.py in the folder docimage:
 
    ```bash
-   git clone [repository-url]
-   cd [repository-name]
+   nano app.py
+   ```
+   Copy the below following python code in app.py:
+   
+   ```bash
+   from flask import Flask
+   
+   app = Flask(__name__)
+
+   @app.route('/')
+   def hello_world():
+      return 'Hello, World!'
+
+   if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=5000)
    ```
 
 2. **Build the Docker Image**
@@ -35,7 +57,7 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
    Run the following command to build the Docker image:
 
    ```bash
-   docker build -t my-flask-app:3.12 .
+   docker build -t docimage:3.12 .
    ```
 
 3. **Run the Docker Container**
@@ -43,7 +65,7 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
    Use the following command to run the Docker container:
 
    ```bash
-   docker run -p 5000:5000 my-flask-app:3.12
+   docker run -p 5000:5000 docimage:3.12
    ```
 
 4. **Access the Application**
@@ -58,7 +80,7 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
 
 2. **Building the Docker Image**
 
-   We used the `docker build` command to create an image named `my-flask-app:3.12`.
+   We used the `docker build` command to create an image named `docimage:3.12`.
 
 3. **Running the Docker Container**
 
@@ -66,4 +88,6 @@ The web application is a simple Flask app that displays "Hello, World!" when acc
 
 ## Conclusion
 
-This project demonstrates how to deploy a simple web application using Docker, creating images using Python 3.12. The process includes setting up a basic Flask application, writing a Dockerfile, building the image, and running the application inside a Docker container.
+This project demonstrates how to deploy a simple web application using Docker, creating images using Python 3.12.
+ The process includes setting up a basic Flask application, writing a Dockerfile, building the image, 
+and running the application inside a Docker container.
